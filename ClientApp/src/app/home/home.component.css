@@ -1,10 +1,14 @@
 /* DashboardComponent's private CSS styles */
 
+.mat-list.mat-list-base mat-list-item {
+  margin-top: 20rem   !important;
+}
+
 h2 {
     text-align: center;
   }
   
-  .heroes-menu {
+  .event-menu {
     padding: 0;
     margin: auto;
     max-width: 1000px;
