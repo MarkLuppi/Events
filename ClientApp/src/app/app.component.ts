@@ -19,7 +19,7 @@ import {
 export class AppComponent {
   // Sets initial value to true to show loading spinner on first load
   loading = true;
-  transitionShowSpinnerTime = 2000; // artificial delay to show spinner behavior
+  transitionShowSpinnerTime = 1000; // artificial delay to show spinner behavior
 
   constructor(private router: Router) {
     router.events.subscribe((event: RouterEvent) => {

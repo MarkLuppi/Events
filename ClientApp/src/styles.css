@@ -79,3 +79,7 @@ a {
 mat-list {
   padding-top: 0;
 }
+
+mat-card-content input{
+  border: none;
+}

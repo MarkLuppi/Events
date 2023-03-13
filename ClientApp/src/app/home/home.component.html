@@ -17,7 +17,7 @@
       <div>
       <mat-form-field appearance="fill">
         <mat-label>Date</mat-label>
-        <input matInput placeholder="date" value={{event.date}}>
+        <input matInput placeholder="date" value="{{event.date | date}}">
       </mat-form-field>
     </div>
       <a  routerLink="/detail/{{event.id}}"><Details></Details>

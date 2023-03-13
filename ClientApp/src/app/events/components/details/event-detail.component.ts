@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { Location, DatePipe } from '@angular/common';
 
-import { Event } from '../events/event';
+import { Event, EventDetails } from '../events/event';
 import { EventsService } from '../../services/events.service';
 
 @Component({
@@ -11,8 +11,8 @@ import { EventsService } from '../../services/events.service';
   styleUrls: [ './event-detail.component.css' ]
 })
 export class EventDetailComponent implements OnInit {
-  event: Event | undefined;
-
+  event: EventDetails | undefined;
+  datepipe: DatePipe = new DatePipe('en-US');
   constructor(
     private route: ActivatedRoute,
     private heroService: EventsService,
@@ -20,13 +20,16 @@ export class EventDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getHero();
+    this.getEvent();
   }
 
-  getHero(): void {
+  getEvent(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.heroService.getEvent(id)
-      .subscribe(event => this.event= event);
+      .subscribe(event => {
+        this.event= event;
+        this.event.date = this.datepipe.transform(this.event.date, 'dd-MMM-YYYY')??"";
+      });
   }
 
   goBack(): void {

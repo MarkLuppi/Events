@@ -10,6 +10,6 @@ export interface EventDetails {
     date: string;
     description: string;
     notes: string;
-    evemtTypeTitle: string;
-    eventTypeDescription: string;
+    eventtypetitle: string;
+    eventtypedescription: string;
 }

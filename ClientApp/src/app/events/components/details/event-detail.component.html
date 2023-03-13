@@ -2,12 +2,37 @@
     <mat-card>
         <mat-card-content>
         <h2>{{event.title | uppercase}} Details</h2>
-        <div><span>id: </span>{{event.id}}</div>
+        
         <div>
         <label for="event-title">Event title: </label>
         <input id="event-title" [(ngModel)]="event.title" placeholder="Event title"/>
         </div>
    
+        <div>
+            <label for="event-date">Event Date: </label>
+            <input id="event-date" [(ngModel)]="event.date" placeholder="Event date"/>
+        </div>
+
+        <div>
+            <label for="event-description">Event Description: </label>
+            <input id="event-description" [(ngModel)]="event.description" placeholder="Event description"/>
+        </div>
+
+        <div>
+            <label for="event-notes">Event Description: </label>
+            <input id="event-notes" [(ngModel)]="event.notes" placeholder="Event notes"/>
+        </div>
+
+        <div>
+            <label for="event-type">Event Type: </label>
+            <input id="event-type" [(ngModel)]="event.eventtypetitle" placeholder="Event type title"/>
+        </div>
+
+        <div>
+            <label for="event-type-desc">Event Type Description: </label>
+            <input id="event-type-desc" [(ngModel)]="event.eventtypedescription" placeholder="Event type desc"/>
+        </div>
+        
         </mat-card-content>
     </mat-card>
     <a mat-flat-button (click)="goBack()">back to the list</a>
