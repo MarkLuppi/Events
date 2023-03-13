@@ -1,6 +1,13 @@
 <body>
-  <app-nav-menu></app-nav-menu>
   <div class="container">
-    <router-outlet></router-outlet>
+    
+    <div *ngIf="loading">
+      <mat-spinner></mat-spinner>
+      <p>Artifical delay of {{transitionShowSpinnerTime/1000}} seconds to show spinner transition at route change</p>
+    </div>
+    
+    <router-outlet *ngIf="!loading"></router-outlet>
+
+ 
   </div>
 </body>

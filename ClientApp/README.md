@@ -1,27 +1,48 @@
-# Events
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
+# Events Portal
 
-## Development server
+This is the Events Portal project as required in the previously provided document.  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The stated requirements were noted and addressed.  In the interest of completing the project on time, only limited work was done on test coverage and look-and-feel. Obviously, more could be done in both areas. 
 
-## Code scaffolding
+## Implementation Notes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This deliverable was developed and built in Visual Studio 2022 on a Windows 11 machine, using the ASP Net Core 6 template for Angular.  The template's default package.json was modified to use Angular 13, as required.
 
-## Build
+The UI components were implemented with Angular Material, the List and Card components, and others.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The backend was implemented with Asp Net Web API and Entity Framework Core 6, using a Repository design pattern where entities are mapped to DTOs, which are the payloads returned in responses to Client App requests.
 
-## Running unit tests
+The database server was SQL Server 2022 (the free Developer license, not SQL Express). 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Table setup for the Events info and initial values for test are provided as an EF migration (see the Migrations directory).
 
-## Running end-to-end tests
+As mentioned in the document, security (credentials, authorization, CORS, etc) is not implemented.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+An artificial delay of 2 seconds is added in the AppComponent.ts to show the Spinner transition when the route changes.  The code line is below.
 
-## Further help
+ transitionShowSpinnerTime = 2000; // artificial delay to show spinner behavior
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Getting Started
+
+After cloning the project at https://github.com/MarkLuppi/Events, it should be buildable and runnable as a Visual Studio 2022 solution.
+
+It has only been tested and run in Visual Studio 2022 as a Development environment on Windows 11.
+
+The database integration requires a couple of steps.  SQL Server 2022 should be used.
+Step 1.  Change the "Data Source" field in the connection string to the name of your server. This connection string is presently in an unsecured location (appsettings.Development.json).
+Step 2.  Apply the EF migration to your server using the package manager console, with "Update-Database".
+
+## Prerequisites
+
+The Automapper package was used for the EF Entities to DTOs mapping. 
+
+Angular version 13 was used (see the package.json).  Angular Material was used for the UI.   
+
+Testing was done with karma and jasmine, the template default.  The test harness for Angular Material was added.
+
+
+## Running the Angular unit tests
+
+The front-end client application is in the ClientApp directory. Run `npm test` in that directory to execute the unit tests

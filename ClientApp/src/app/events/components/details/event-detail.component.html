@@ -1,0 +1,14 @@
+<div *ngIf="event">
+    <mat-card>
+        <mat-card-content>
+        <h2>{{event.title | uppercase}} Details</h2>
+        <div><span>id: </span>{{event.id}}</div>
+        <div>
+        <label for="event-title">Event title: </label>
+        <input id="event-title" [(ngModel)]="event.title" placeholder="Event title"/>
+        </div>
+   
+        </mat-card-content>
+    </mat-card>
+    <a mat-flat-button (click)="goBack()">back to the list</a>
+  </div>

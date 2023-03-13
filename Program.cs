@@ -1,3 +1,8 @@
+using Event.Services;
+using Events.DbContexts;
+using Events.Services;
+using Microsoft.EntityFrameworkCore;
+
 namespace Events
 {
     public class Program
@@ -7,9 +12,19 @@ namespace Events
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddCors();
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllers();
 
+            builder.Services.AddDbContext<EventInfoContext>(
+                dbContextOptions => dbContextOptions.UseSqlServer(
+                    // get connection string from unsecured appSettings for Development context
+                    builder.Configuration.GetConnectionString("EventInfoDBConnectionString")
+                    )
+                );
+            builder.Services.AddScoped<IEventInfoRepository, EventInfoRepository>();
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -20,9 +35,10 @@ namespace Events
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+          
             app.UseRouting();
-
+            app.UseCors(x => x.SetIsOriginAllowed(origin => true));
+            app.UseStaticFiles();
 
             app.MapControllerRoute(
                 name: "default",

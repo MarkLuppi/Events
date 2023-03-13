@@ -229,3 +229,4 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+ClientApp/.angular/cache/13.3.10/angular-webpack/e910312bfef9d98c28859f2216e943f57d9b55c7/6.pack
