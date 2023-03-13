@@ -40,9 +40,4 @@ The Automapper package was used for the EF Entities to DTOs mapping.
 
 Angular version 13 was used (see the package.json).  Angular Material was used for the UI.   
 
-Testing was done with karma and jasmine, the template default.  The test harness for Angular Material was added.
-
-
-## Running the Angular unit tests
-
-The front-end client application is in the ClientApp directory. Run `npm test` in that directory to execute the unit tests
+No testing or eslint rules included because of time constraints.  I'd be glad to do all in a second pass, as well as code cleanup, directory structure revisions, if it's useful.
