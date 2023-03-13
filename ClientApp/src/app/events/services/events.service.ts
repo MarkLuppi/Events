@@ -43,7 +43,7 @@ export class EventsService {
   getEvent(id: number): Observable<EventDetails> {
     const url = `${this.eventsUrl}/${id}`;
     return this.http.get<EventDetails>(url).pipe(
-      tap(_ => this.log(`fetched event id=${id}`)),
+      tap(ev => console.log(`fetched event id=${ev}`)),
       catchError(this.handleError<EventDetails>(`getEvent id=${id}`))
     );
   }
