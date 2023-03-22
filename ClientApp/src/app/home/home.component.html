@@ -1,30 +1,21 @@
-<p>
-  <mat-toolbar>
-    <span>Current events</span>
+<p class="text-rainbow-animation" style="text-align-last:right; font-size: 0px;">
+  &#9886;
+  <mat-toolbar style="display: grid; grid-template-columns: 15% 60% 25%;width: 100%;" >
+    <span style="font-size: 2em;">🌈</span><span style="font-size: 1.5em;"> Current Events</span><span style=" color: maroon;font-size: 2em">ǋ</span>
   </mat-toolbar>
+  &#9886;
 </p>
 
 <div>
-  <mat-list role="list" >
-    <mat-list-item role="listitem" *ngFor="let event of events">
-     <div>
-      <div>
-      <mat-form-field appearance="fill">
-        <mat-label>Title</mat-label>
-        <input matInput placeholder="title" value={{event.title}}>
-      </mat-form-field>
-      </div>
-      <div>
-      <mat-form-field appearance="fill">
-        <mat-label>Date</mat-label>
-        <input matInput placeholder="date" value="{{event.date | date}}">
-      </mat-form-field>
-    </div>
-      <a  routerLink="/detail/{{event.id}}"><Details></Details>
-    
+  <mat-nav-list class="basic-list"  role="list" >
+    <mat-list-item  class="basic-list-item" role="listitem" *ngFor="let event of events">
+
+      <a  matListItemTitle routerLink="/detail/{{event.id}}">{{event.title}}
+        <p matListItemLine class="demo-2">  {{event.date}} </p>
       </a>
-      </div>
+
+    
     </mat-list-item>
     
-  </mat-list>
+  </mat-nav-list>
 </div>

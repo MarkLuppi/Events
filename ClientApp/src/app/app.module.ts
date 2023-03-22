@@ -10,8 +10,8 @@ import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
 
-import { EventDetailComponent } from './events/components/details/event-detail.component';
-import { EventsModule } from './events/events.module';
+import { EventDetailComponent } from './features/events/components/details/event-detail.component';
+import { EventsModule } from './features/events/events.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({

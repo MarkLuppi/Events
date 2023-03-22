@@ -1,0 +1,94 @@
+
+/* override material design theme (keep that separate for release upgrades)*/
+@import './default-indigo-pink.css';
+
+
+.mat-list-item a {
+    background-color: antiquewhite
+}
+
+
+
+body {
+    background-color: seashell;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content:center;
+ 
+
+  }
+  
+  .mat-toolbar {
+    font-family:arial black;
+    font-size:16px;
+  
+    border: 3px solid;
+    border-radius: 30px; 
+    color: darkblue;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 90%
+       
+    );
+    }
+  
+
+  .basic-list-item a[matlistitemtitle] {
+    width: 100%;
+    text-decoration: none;
+  }
+
+  mat-nav-list[role="list" ].basic-list {
+    height: 35em;
+  }
+
+  mat-list-item[role="listitem" ].basic-list-item {
+    height: 10em;
+  }
+
+
+mat-card-content input{
+    border: none;
+}
+
+  
+a:hover {
+    background-color: lightblue;
+}
+
+a {
+    background-color: #3f525c;
+    border-radius: 2px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    min-width: 70px;
+    margin: .5rem auto;
+    box-sizing: border-box;
+  
+    /* flexbox */
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+mat-list-item :hover {
+    color: darkblue ;
+    border-width: 14px;
+    border-color: red !important;
+}
+  
+
+ 

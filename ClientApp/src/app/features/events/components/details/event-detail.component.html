@@ -1,8 +1,13 @@
 <div *ngIf="event">
     <mat-card>
+    <mat-card-title>Event Details
+    </mat-card-title>
+        <mat-card-header>
+            {{event.title | uppercase}}
+        </mat-card-header>
         <mat-card-content>
-        <h2>{{event.title | uppercase}} Details</h2>
-        
+      
+        <mat-divider [inset]="true"></mat-divider>
         <div>
         <label for="event-title">Event title: </label>
         <input id="event-title" [(ngModel)]="event.title" placeholder="Event title"/>
@@ -17,7 +22,7 @@
             <label for="event-description">Event Description: </label>
             <input id="event-description" [(ngModel)]="event.description" placeholder="Event description"/>
         </div>
-
+        <mat-divider [inset]="true"></mat-divider>
         <div>
             <label for="event-notes">Event Notes: </label>
             <input id="event-notes" [(ngModel)]="event.notes" placeholder="Event notes"/>
@@ -26,6 +31,10 @@
       
         
         </mat-card-content>
+        <mat-divider color="primary"></mat-divider>
+        <mat-card-actions>
+            <button mat-raised-button (click)="goBack()" color="primary">back to the list</button>
+        </mat-card-actions>
     </mat-card>
-    <a mat-flat-button (click)="goBack()">back to the list</a>
+   
   </div>
